@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		.box {
+			display: inline-block;
+			max-width: 600px;
+			overflow: hidden;
+			position: relative;
+			cursor: pointer;
+			font-size: 0;
+		}
+		.box img {
+			max-width: 100%;
+			-webkit-transition: .5s;
+			transition: .5s;
+			position: relative;
+		}
+		.box:hover img {
+			-webkit-transform: scale(1.1, 1.1);
+			transform: scale(1.1, 1.1);
+		}
+		.box .box_alpha {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			background-color: #000;
+			-webkit-transition: .5s;
+			transition: .5s;
+		}
+		.box:hover .box_alpha {
+			opacity: .7;
+		}
+		.box .box_conteudo {
+			opacity: 0;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%) scale(3, 3);
+			transform: translate(-50%, -50%) scale(3, 3);
+			-webkit-transition: .5s;
+			transition: .5s;
+			text-shadow: 2px 2px 5px black;
+			color: white;
+			font-size: 42px;
+			text-align: center;
+		}
+		.box:hover .box_conteudo {
+			opacity: 1;
+			-webkit-transform: translate(-50%, -50%) scale(1, 1);
+			transform: translate(-50%, -50%) scale(1, 1);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<!-- Img -->
+		<img src="imagem.jpg" />
+		
+		<!-- Transparencia -->
+		<div class="box_alpha"></div>
+		
+		<!-- Conteudo -->
+		<div class="box_conteudo">
+			Título da Imagem
+		</div>
+	</div>
+</body>
+</html>
